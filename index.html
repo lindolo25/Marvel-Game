@@ -6,9 +6,28 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="js/charapter.js"></script>
     <script src="js/game.js"></script>
 </head>
 <body>
-    
+    <h1>Your player</h1>
+    <div id="you"></div>
+    <h1>Available</h1>
+    <div id="available"></div>
+    <h1>Defender</h1>
+    <div id="defender"></div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function()
+        {
+            marvelGame.init();
+        });       
+        
+    </script>
 </body>
 </html>
