@@ -10,7 +10,7 @@ var marvelGame =
         {
             $("#available").append(this.charapters[i].getHtml);
             $("#available>div").on("click", function() {
-                this.completeSelection(this);
+                marvelGame.completeSelection(this);
             });
         }
     },
@@ -19,7 +19,7 @@ var marvelGame =
         $("#you").append(element).off("click");
 
         $("#available>div").on("click", function() {
-            this.addToDefenderaddToDefender(this);
+            marvelGame.addToDefender(this);
         });
     },
     addToDefender: function(element)
