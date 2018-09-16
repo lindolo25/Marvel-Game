@@ -6,9 +6,6 @@ body {
 }
 
 .charapter {
-    /*background-color: white;
-    border: 2px solid green;
-    color: black;;*/
     display: inline-block;
     padding: 12px 12px 0px 12px;
     max-width: 170px;
@@ -25,11 +22,11 @@ body {
 }
 
 .charapter div{
-    /*font-size: 12px;
-    line-height: 12px;*/
     text-align: center;
     font-weight: bold;
 }
+
+.inline { display: inline-block; }
 
 .badge {
     position: relative;
@@ -62,6 +59,8 @@ body {
         padding: 10px 10px 0px 10px;
         max-width: 120px;
     }
+
+    .inline { display: block; }
 
     .charapter img{
         width: 100px;
