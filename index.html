@@ -5,22 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="js/charapter.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="js/game.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    
 </head>
 <body>
-    <h1>Your player</h1>
-    <div id="you"></div>
-    <h1>Available</h1>
-    <div id="available"></div>
-    <h1>Defender</h1>
-    <div id="defender"></div>
-
+    <div class="container">
+        <div id="chose-area">
+            <h1>Choose a player</h1>
+            <div class="charapter" id="cpt-america" data-health-points="150">
+                <img src="images/america.png" alt="Captain America" />
+                <div class="badge">Captain America</div>
+                <div class="badge badge-info">150</div>
+            </div>
+            <div class="charapter" id="ironman" data-health-points="110">
+                <img  src="images/ironman.png" alt="Ironman" />
+                <div class="badge">Ironman</div>
+                <div class="badge badge-info">110</div>
+            </div>
+            <div class="charapter" id="hulk" data-health-points="200">
+                <img  src="images/hulk.png" alt="Hulk" />
+                <div class="badge">Hulk</div>
+                <div class="badge badge-info">200</div>
+            </div>            
+            <div class="charapter" id="thor" data-health-points="200">
+                <img  src="images/thor.png" alt="Thor" />
+                <div class="badge">thor</div>
+                <div class="badge badge-info">200</div>
+            </div>
+        </div>
+        <main>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h1>Your player</h1>
+                    <div id="main-area"></div>
+                </div>
+                <div class="col-sm-2">
+                    <button id="attack"class="btn btn-primary">Attack</button>
+                </div>
+                <div class="col-sm-5">
+                    <h1>Defender</h1>
+                    <div id="defender-area"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Available</h1>
+                    <div id="enemies-area"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div id="log"></div>
+            <button id="resetGame"class="btn btn-primary">Reset</button>
+        </footer>
+    </div>
     <script type="text/javascript">
 
         $(document).ready(function()

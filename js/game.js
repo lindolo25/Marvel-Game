@@ -1,30 +1,74 @@
-var marvelGame = 
-{
-    charapters: [
-        new character("#cpt-america", "Cpt America", "123.jpg", 120, 4, 8, 5),
-        new character("#ironman", "Ironman", "123.jpg", 120, 6, 6, 7),
-        new character("#hulk", "Hulk", "123.jpg", 120, 8, 4, 9)
-    ],
-    init: function(){
-        for(i = 0; i < this.charapters.length; i++)
+var marvelGame = {
+    charapters: [],
+    main:undefined,
+    defender:undefined,
+    init: function()
+    {
+        // load charapters from HTML ---------------------------------------------------------------
+        var charaptersTemp = $(".charapter");
+        for(i = 0; i < charaptersTemp.length; i++)
         {
-            $("#available").append(this.charapters[i].getHtml);
-            $("#available>div").on("click", function() {
-                marvelGame.completeSelection(this);
+            $("main").hide();
+            this.charapters.push({
+                ID: $(charaptersTemp[i]).attr("id"),
+                healthPoints: parseInt($(charaptersTemp[i]).attr("data-health-points")),
+                attackPower: parseInt($(charaptersTemp[i]).attr("data-attack-power")),
+                counterAttackPower : parseInt($(charaptersTemp[i]).attr("data-counter-attack-power")),
+                basePower : parseInt($(charaptersTemp[i]).attr("data-base-power"))
             });
+            $(charaptersTemp[i]).attr("data-index", i);
         }
-    },
-    completeSelection: function(element)
-    {
-        $("#you").append(element).off("click");
-
-        $("#available>div").on("click", function() {
-            marvelGame.addToDefender(this);
+        console.log(this.charapters[0]);
+        
+        // set the onclick event for the charapter ---------------------------------------------------
+        charaptersTemp.on("click", function(){
+            marvelGame.charapterClicked(this);
         });
+
+        // set the attack event ----------------------------------------------------------------------
+        $("#attack").on("click", function(){
+            marvelGame.attack();
+        });
+
+        // set reset event ----------------------------------------------------------------------------
+        $("#resetGame").on("click", function(){
+            marvelGame.reset();
+        });
+        $("#resetGame").hide();
     },
-    addToDefender: function(element)
+    charapterClicked: function(charapter)
     {
-        $("#defender").append(element);
-    }
+        if(this.main === undefined)
+        {
+            this.main = $(charapter).attr("data-index");
+            $(charapter).appendTo("#main-area");
+            console.log(this.charapters[this.main].healthPoints);
+
+            $("main").show();
+            $("#chose-area").hide();
+            // Move the rest of the charapters to the Enemies Area -------------------------------------
+            var toMove = $("#chose-area>.charapter")
+            for(i = 0; i < toMove.length; i++)
+            {
+                $(toMove[i]).appendTo("#enemies-area");
+            }
+        }
+        else if(this.defender === undefined)
+        {
+            this.defender = $(charapter).attr("data-index");
+            $(charapter).appendTo("#defender-area");
+            console.log(this.charapters[this.defender].healthPoints);
+        }        
+    },
+    attack: function()
+    {
+        console.log("an attack");
+        
+    },
+    reset: function()
+    {
+        console.log("Reset");
+    },
+
 }
 
