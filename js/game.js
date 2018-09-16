@@ -115,15 +115,17 @@ var marvelGame = {
                 basePower : parseInt($(charaptersTemp[i]).attr("data-attack-power"))
             });
             $(charaptersTemp[i]).attr("data-index", i);
+            $("#" + $(charaptersTemp[i]).attr("id") +">#health-points").text($(charaptersTemp[i]).attr("data-health-points"));
 
             // append all charapters to the Choose-Area -----------------------------------------------
-            $(charaptersTemp[i]).appendTo("chose-area");
+            $(charaptersTemp[i]).appendTo("#chose-area");
         }
         
         // show and hide the sections -----------------------------------------------------------------
         $("main").hide();
         $("#resetGame").hide();
         $('#chose-area').show();
+        this.log("","");
     },
     log: function(message, type)
     {
