@@ -16,31 +16,43 @@
     <div class="container">
         <div id="chose-area">
             <h1>Choose a player</h1>
-            <div class="charapter" id="cpt-america" data-health-points="150">
+            <div class="charapter" id="cpt-america" 
+                data-health-points="150" 
+                data-attack-power="8"
+                data-counter-attack-power="10">
                 <img src="images/america.png" alt="Captain America" />
                 <div class="badge">Captain America</div>
-                <div class="badge badge-info">150</div>
+                <div id="health-points" class="badge badge-info">150</div>
             </div>
-            <div class="charapter" id="ironman" data-health-points="110">
+            <div class="charapter" id="ironman"
+                data-health-points="110" 
+                data-attack-power="8"
+                data-counter-attack-power="10">
                 <img  src="images/ironman.png" alt="Ironman" />
                 <div class="badge">Ironman</div>
-                <div class="badge badge-info">110</div>
+                <div id="health-points" class="badge badge-info">110</div>
             </div>
-            <div class="charapter" id="hulk" data-health-points="200">
+            <div class="charapter" id="hulk"
+                data-health-points="200" 
+                data-attack-power="8"
+                data-counter-attack-power="10">
                 <img  src="images/hulk.png" alt="Hulk" />
                 <div class="badge">Hulk</div>
-                <div class="badge badge-info">200</div>
+                <div id="health-points" class="badge badge-info">200</div>
             </div>            
-            <div class="charapter" id="thor" data-health-points="200">
+            <div class="charapter" id="thor"
+                data-health-points="200" 
+                data-attack-power="8"
+                data-counter-attack-power="10">
                 <img  src="images/thor.png" alt="Thor" />
                 <div class="badge">thor</div>
-                <div class="badge badge-info">200</div>
+                <div id="health-points" class="badge badge-info">200</div>
             </div>
         </div>
         <main>
             <div class="row">
                 <div class="col-sm-5">
-                    <h1>Your player</h1>
+                    <h1>You</h1>
                     <div id="main-area"></div>
                 </div>
                 <div class="col-sm-2">
@@ -53,14 +65,16 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Available</h1>
+                    <h1>Enemies</h1>
                     <div id="enemies-area"></div>
                 </div>
             </div>
         </main>
-        <footer>
-            <div id="log"></div>
-            <button id="resetGame"class="btn btn-primary">Reset</button>
+        <footer class="row justify-content-md-center">
+            <div id="log" class="col-sm-4"></div>
+            <div class="col-sm-12">
+                <button id="resetGame"class="btn btn-dark">Reset</button>
+            </div>
         </footer>
     </div>
     <script type="text/javascript">
